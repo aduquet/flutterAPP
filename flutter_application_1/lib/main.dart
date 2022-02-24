@@ -27,13 +27,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  TextEditingController _usernameController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -45,18 +40,61 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("logo here"),
-            Text("Textfielf username here"),
-            Text("Textfielf Password here"),
-            Text('Button here'),
+            Container(
+              width: 150,
+              height: 150,
+              child: Image.asset('assets/logo.jpg'),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 50, right: 50, bottom: 10),
+              child: TextFormField(
+                controller: _usernameController,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                ),
+                cursorColor: Colors.black,
+                decoration: InputDecoration(
+                  hintText: 'Input Username',
+                  border: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black)),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 50, right: 50, bottom: 10),
+              child: TextFormField(
+                controller: _passwordController,
+                obscureText: true,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                ),
+                cursorColor: Colors.black,
+                decoration: InputDecoration(
+                  hintText: 'Input Password',
+                  border: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black)),
+                ),
+              ),
+            ),
+            Container(
+              child: MaterialButton(
+                onPressed: () {
+                  print('Pressed the button');
+                },
+                child: Text('Press Me'),
+              ),
+            ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
