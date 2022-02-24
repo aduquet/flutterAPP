@@ -85,8 +85,16 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Container(
+              width: MediaQuery.of(context).size.width / 1.3,
+              height: 50,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(35),
+                color: Colors.amber,
+              ),
               child: MaterialButton(
                 onPressed: () {
+                  print('Username: ' + _usernameController.text);
+                  print('Password: ' + _passwordController.text);
                   print('Pressed the button');
                 },
                 child: Text('Press Me'),
