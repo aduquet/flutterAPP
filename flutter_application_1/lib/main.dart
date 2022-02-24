@@ -47,7 +47,8 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text("logo here"),
             Text("Textfielf username here"),
-                      Text("Textfielf username here"),
+            Text("Textfielf Password here"),
+            Text('Button here'),
           ],
         ),
       ),
