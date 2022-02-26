@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.redu_app_1">
+    package="com.adt.redu_app_1">
    <application
         android:label="redu_app_1"
         android:icon="@mipmap/ic_launcher">
